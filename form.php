@@ -49,7 +49,7 @@
 				</p>
 				<p>
 					<label for="email">Email:</label><?php echo @$email_error; ?>
-					<input type="text" id="email" name="email" value="<?php echo @$email ?>" class="email required" />
+					<input type="email" id="email" name="email" value="<?php echo @$email ?>" class="email required" />
 				</p>
 				<p>
 					<label for="message">Message:</label><?php echo @$message_error; ?>
@@ -60,6 +60,21 @@
 		</form>
         
 <?php include('inc/footer.inc.php'); ?>
+        
+        <script src="//ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+        <script>
+        
+            $(document).ready(function(){
+             $('#contact-from').submit(function(e){
+                 if($('#name').val()==''||$('#email').val() ==''{
+                    alert('Please fillout the name and email fields');
+                 e.preventDefault();
+                     
+                 }
+             });   
+            });
+        
+        </script>
         
 	</body>
 </html>
